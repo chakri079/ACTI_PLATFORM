@@ -5,7 +5,7 @@ const Videos = () => {
     const [videos, setVideos] = useState([]);
     const [language, setLanguage] = useState('English');
     const API_KEY = 'AIzaSyDYxdbFXGS6qLCz7n5SXiUoSSNdIOn9nFM'; // Replace with your actual API key
-
+   
     // Language-based search queries
     const queries = {
         English: 'cyber security latest attacks',
@@ -26,7 +26,7 @@ const Videos = () => {
             }
         };
         fetchVideos();
-    }, [language]); // Fetch videos when language changes
+    }, [queries]); // Fetch videos when language changes  replace with languages
 
     return (
         <div className="videos-container">
