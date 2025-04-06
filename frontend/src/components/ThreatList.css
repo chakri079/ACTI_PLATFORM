@@ -1,0 +1,137 @@
+.threat-list {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a2e;
+    color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #e94560;
+  }
+  
+  .no-threats {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .threats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .threat-card {
+    background-color: #0f3460;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .threat-card.expanded {
+    background-color: #162447;
+  }
+  
+  .threat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .threat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .source-icon {
+    font-size: 20px;
+  }
+  
+  .severity-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .high-severity {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .medium-severity {
+    background-color: #ffa64d;
+    color: black;
+  }
+  
+  .low-severity {
+    background-color: #66cc66;
+    color: black;
+  }
+  
+  .threat-content {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .threat-card.expanded .threat-content {
+    display: block;
+  }
+  
+  .threat-description {
+    margin: 10px 0;
+  }
+  
+  .threat-metadata p {
+    margin: 5px 0;
+  }
+  
+  .mitre-mapping, .mitigation-steps {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #192a56;
+    border-radius: 5px;
+  }
+  
+  .threat-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .map-button, .mitigate-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .map-button {
+    background-color: #e94560;
+    color: white;
+  }
+  
+  .map-button:hover {
+    background-color: #ff6b81;
+  }
+  
+  .mitigate-button {
+    background-color: #22a6b3;
+    color: white;
+  }
+  
+  .mitigate-button:hover {
+    background-color: #3edbf0;
+  }
+  

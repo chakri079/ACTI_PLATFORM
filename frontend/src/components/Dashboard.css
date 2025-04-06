@@ -1,0 +1,48 @@
+.dashboard {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a2e;
+    color: white;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #e94560;
+  }
+  
+  .metrics-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .metric-card {
+    background-color: #0f3460;
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .metric-value {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .threat-level {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

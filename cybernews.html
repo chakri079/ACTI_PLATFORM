@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity News</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #news-container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .news-item { width: 300px; margin: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; text-align: left; }
+        .news-item img { width: 100%; height: 150px; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+    <h2>Latest Cybersecurity News</h2>
+    <div id="news-container"></div>
+
+    <script>
+        const API_KEY = '8ea401147dce4f3b9e55b2dc1a554eb1';  // Replace with your API Key
+        const query = 'cyber security';
+        const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
+
+        async function fetchNews() {
+            const response = await fetch(url);
+            const data = await response.json();
+            displayNews(data.articles);
+        }
+
+        function displayNews(articles) {
+            const container = document.getElementById('news-container');
+            container.innerHTML = articles.map(article => `
+                <div class="news-item">
+                    <img src="${article.urlToImage || 'https://via.placeholder.com/300'}" alt="News Image">
+                    <h3>${article.title}</h3>
+                    <p>${article.description || 'No description available.'}</p>
+                    <a href="${article.url}" target="_blank">Read More</a>
+                </div>
+            `).join('');
+        }
+
+        fetchNews();
+    </script>
+
+</body>
+</html>

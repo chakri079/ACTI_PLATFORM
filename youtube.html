@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Videos</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #videos { display: flex; flex-wrap: wrap; justify-content: center; }
+        .video { margin: 10px; }
+        iframe { width: 300px; height: 200px; }
+    </style>
+</head>
+<body>
+
+    <h2>Latest Cyber Security Videos</h2>
+    <div id="videos"></div>
+
+    <script>
+        const API_KEY = 'AIzaSyDYxdbFXGS6qLCz7n5SXiUoSSNdIOn9nFM';  // Replace with your API Key
+        const searchQuery = 'cyber security latest attacks';
+        const maxResults = 10;
+
+        async function fetchVideos() {
+            const response = await fetch(
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${encodeURIComponent(searchQuery)}&type=video&key=${API_KEY}`
+            );
+            const data = await response.json();
+            displayVideos(data.items);
+        }
+
+        function displayVideos(videos) {
+            const container = document.getElementById('videos');
+            container.innerHTML = videos.map(video => `
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/${video.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                    <p>${video.snippet.title}</p>
+                </div>
+            `).join('');
+        }
+
+        fetchVideos();
+    </script>
+
+</body>
+</html>
