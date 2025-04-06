@@ -1,18 +1,17 @@
 # API Keys and Configurations
 # Replace placeholder values with your actual API keys
-
+from dotenv import load_dotenv
+load_dotenv()
+# import os
 # Twitter API credentials
-TWITTER_API_KEY = "BQ1ut0IWDpyx1e3X5IPQF5yNR"
-TWITTER_API_SECRET = "f4ycA4LiBjILeQATduD1wdfXfg86Jg4syvwmDBhJslDUiXmJzN"
-TWITTER_ACCESS_TOKEN = "1906388921581543424-genjHttoq1n9Gdreq4wbZhIT3au5PT"
-TWITTER_ACCESS_SECRET = "NDnM4nX0YgYuImEf4S4VbKE3dnXQb9NsSndPPjzTbdgXl"
-TWITTER_BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAJgi0QEAAAAAvG63A1krXn6b3iBULggxQMiFOLg%3DYcVZRrL9c2oB8nQg8cVPCf8wc3KuD2oXfxuZNv87meuo6hOT1h"
+TWITTER_API_KEY = os.getenv("TWITTER_API_KEY")
+TWITTER_API_SECRET = os.getenv("TWITTER_API_SECRET")
+TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
+TWITTER_ACCESS_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
+TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN")
 
-# OTX (Open Threat Exchange) API key
-OTX_API_KEY = "074ef849759141fb30b9da34308c20bc2b542e9ad8a26def47b5fa4c0a06f55d"
-
-# Gemini API key
-GEMINI_API_KEY = "AIzaSyBvflGWEoB8fmT4LyQ1La7ODPuDyPOdZtE"
+OTX_API_KEY = os.getenv("OTX_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Twitter search terms for cybersecurity threats
 TWITTER_SEARCH_TERMS = [
